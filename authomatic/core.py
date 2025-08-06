@@ -299,7 +299,7 @@ class Future(threading.Thread):
         passed to :data:`func`.
         """
 
-        super().__init__()
+        super(Future, self).__init__()
         self._func = func
         self._args = args
         self._kwargs = kwargs
@@ -1170,7 +1170,7 @@ class UserInfoResponse(Response):
     """
 
     def __init__(self, user, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super(UserInfoResponse, self).__init__(*args, **kwargs)
 
         #: :class:`.User` instance.
         self.user = user

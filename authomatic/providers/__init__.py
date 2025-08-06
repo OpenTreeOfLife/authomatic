@@ -655,7 +655,7 @@ class AuthorizationProvider(BaseProvider):
 
         """
 
-        super().__init__(*args, **kwargs)
+        super(AuthorizationProvider, self).__init__(*args, **kwargs)
 
         self.consumer_key = self._kwarg(kwargs, 'consumer_key')
         self.consumer_secret = self._kwarg(kwargs, 'consumer_secret')
@@ -1049,7 +1049,7 @@ class AuthenticationProvider(BaseProvider):
     has_protected_resources = False
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+        super(AuthenticationProvider, self).__init__(*args, **kwargs)
 
         # Lookup default identifier, if available in provider
         default_identifier = getattr(self, 'identifier', None)
